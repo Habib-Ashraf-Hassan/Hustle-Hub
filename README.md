@@ -88,4 +88,4 @@ Dashboard for administrators to manage users (can delete a user , approve regist
 
 ### Figma design of the client's landing page
 
-![Figma design](/Diagrams/clients__landing_page.png)
+![Figma design](/Diagrams/Hustle-hub-figma.png)
