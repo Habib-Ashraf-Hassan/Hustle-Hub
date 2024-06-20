@@ -79,7 +79,6 @@ Dashboard for administrators to manage users (can delete a user , approve regist
 - Figma: UI/UX Design
 - Git and Github: version control
 - Draw.io: system design/ UML diagrams
-- Slack: workspace for collaboration and communication
 
 ## Design / UML diagrams
 
