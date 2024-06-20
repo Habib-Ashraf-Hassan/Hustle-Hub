@@ -1,0 +1,32 @@
+.client-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+}
+.info img,.info2 img{
+    width:200px;
+    height: 200px;
+    object-fit:cover;
+    /* border: 1px solid red; */
+}
+.info .content,.info2 .content{
+    text-align: left;
+    max-width: 300px;
+}
+#card-link .sub-div{
+    background-color: white;
+}
+#mainNav{
+    background: #034e36f1;
+}
+#updateprofile.card .card-body{
+    width:80%;
+
+}
+
+@media (max-width:440px){
+    #card-link .sub-div .info .client-card{
+        flex-direction: column;
+    }
+}

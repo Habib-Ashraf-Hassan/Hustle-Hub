@@ -1,0 +1,1 @@
+This contains the logos opted for the project

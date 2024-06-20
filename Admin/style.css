@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+body {
+    background: -webkit-linear-gradient(left, #00563b, #026344);
+    background-size: cover;
+}
+
+.register{
+    
+    margin-top: 3%;
+    padding: 3%;
+}
+.register-left{
+    text-align: center;
+    color: #fff;
+    margin-top: 4%;
+}
+.register-left input{
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #383d41;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+.register-right{
+    /* background: #1c9971; */
+    margin-top: 30px;
+    
+}
+.register-left img{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+.register-left p{
+    font-weight: lighter;
+    padding: 12%;
+    margin-top: -9%;
+}
+.register-form {
+    display: inline-block;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 15px;
+    margin-left: 90px;
+    display: block; /* Ensure form groups take up full width */
+}
+/* Change placeholder color to red */
+.form-control::placeholder {
+    color: red;
+}
+
+.register .register-form{
+    padding: 10%;
+    margin-top: 10%;
+}
+.btnRegister{
+    float: right;
+    margin-top: 10%;
+    border: none;
+    border-radius: 10px;
+    padding: 2%;
+    background: #00563b;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+}
+.register .nav-tabs{
+    margin-top: 20%;
+    border: none;
+    background: #099669;
+    border-radius: 1.5rem;
+    /* width: 28%; */
+    float:none;
+    height: 50px;
+    padding: 10px;
+}
+.register .nav-tabs .nav-link{
+    padding: 1%;
+    height: 34px;
+    font-weight: 600;
+    color: #fff;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+.register .nav-tabs .nav-link:hover{
+    border: none;
+}
+.register .nav-tabs .nav-link.active{
+    width: 120px;
+    color: #00563b;
+    border: 2px solid #00563b;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+.register-heading{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+}
+.tab-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub-div {
+    background-color: bisque;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    margin: 20px;
+    padding: 5px;
+    /* width: 80%; */
+}
+
+.sub-div-headings{
+    color: black;
+}
+
+.info {
+    font-size: 14px; /* Adjust font size as needed */
+}
+.rate_border{
+    background-color: black;
+    color: wheat;
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+
+}
+
+

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Client - HUSTLE HUB</title>
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="logos/H_gold_logo.png" /> -->
+    <link rel="shortcut icon" type="image/x-icon" href="../logos/H_logo_new.png" />
+    
+<link rel="stylesheet" type="text/css" href="../CSS/client_style.css">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<style >
+     .form-control {
+    border-radius: 0.75rem;
+}
+/* Change placeholder color to red */
+.form-control::placeholder {
+    color: brown;
+}
+h5{
+    color: bisque;
+}
+</style>
+
+<script>
+    var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('cpassword').value) {
+    document.getElementById('message').style.color = '#5dd05d';
+    document.getElementById('message').innerHTML = 'Matched';
+  } else {
+    document.getElementById('message').style.color = '#f55252';
+    document.getElementById('message').innerHTML = 'Not Matching';
+  }
+}
+
+function alphaOnly(event) {
+  var key = event.keyCode;
+  return ((key >= 65 && key <= 90) || key == 8 || key == 32);
+};
+
+function checklen()
+{
+    var pass1 = document.getElementById("password");  
+    if(pass1.value.length<6){  
+        alert("Password must be at least 6 characters long. Try again!");  
+        return false;  
+  }  
+}
+
+</script>
+
+</head>
+
+<!------ Include the above in your HEAD tag ---------->
+<body>
+    <!-- Navigation bar-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" >
+    <div class="container">
+
+        <a class="navbar-brand js-scroll-trigger" href="#" style="margin-top: 10px;margin-left:-65px;font-family: 'IBM Plex Sans', sans-serif;color: goldenrod;">
+            <img src="../logos/H_logo_new.png" alt="Hustle Hub Logo" style="display: inline-block; width: 30px; height: auto; vertical-align: middle; margin-right: 5px;">
+            <h4 style="display: inline-block;">HUSTLE HUB</h4>
+        </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" style="margin-right: -200px;">
+            <a class="nav-link js-scroll-trigger" href="" style="color: white;font-family: 'IBM Plex Sans', sans-serif;float: right;">
+                <a>
+                    <h5>CLIENT NAME &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-user"></i></h5>
+                    
+                </a>
+          </li>
+          
+        </ul>
+      </div> -->
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown" style="margin-right: -100px;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white; font-family: 'IBM Plex Sans', sans-serif;">
+                    <h5>CLIENT NAME</h5>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#"><i class="fa fa-user"></i> &nbsp;Profile</a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-comments"></i> &nbsp;Feedback</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#"><i class="fa fa-trash"></i> &nbsp;Delete Account</a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> &nbsp;Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    </div>
+  </nav>
+  <div class="container register" style="font-family: 'IBM Plex Sans', sans-serif;">
+    <div class="row">
+        <div class="col-md-12 register-right text-center"> <!-- Changed col-md-9 to col-md-12 and removed register-left class -->
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="margin: 0 auto;"> <!-- Added margin: 0 auto; to center the nav-tabs -->
+                <li class="nav-item">
+                    <a class="nav-link active" id="carpenters-tab" data-toggle="tab" href="#carpenters" role="tab" aria-controls="carpenters" aria-selected="true">Carpenters</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="electrician-tab" data-toggle="tab" href="#electrician" role="tab" aria-controls="electrician" aria-selected="false">Electrician</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="plumbers-tab" data-toggle="tab" href="#plumbers" role="tab" aria-controls="plumbers" aria-selected="false">Plumbers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="laundry-tab" data-toggle="tab" href="#laundry" role="tab" aria-controls="laundry" aria-selected="false">Laundry</a>
+                    <li class="nav-item">
+                        <a class="nav-link" id="movers-tab" data-toggle="tab" href="#movers" role="tab" aria-controls="movers" aria-selected="false">Movers</a>
+                    </li>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <!-- <div class="tab-pane fade show active" id="carpenters" role="tabpanel" aria-labelledby="carpenters-tab">
+                    
+                    
+                </div> -->
+                <div class="tab-pane fade show active" id="carpenters" role="tabpanel" aria-labelledby="carpenters-tab">
+                    <div class="sub-div" style="background-image: url('../images/dude_carpenter.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Abdirahman Green</h6>
+                            <p>Profession: Carpenter</p>
+                            <p>Your dedicated carpentry ready to transform your ideas into masterful craftsmen, with over 5 years of hands-on experience in carpentry</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 500 - at most kshs 3000</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.0/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-div" style="background-image: url('../images/bro_carpenter.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: John Doe</h6>
+                            <p>Profession: Carpenter</p>
+                            <p>Experienced carpenter specializing in custom furniture and woodworking projects.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 800 - at most kshs 2500</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.2/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-div" style="background-image: url('../images/carpenter_stand.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: John Smith</h6>
+                            <p>Profession: Carpenter</p>
+                            <p>Skilled carpenter with attention to detail and a passion for delivering high-quality work.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 700 - at most kshs 2500</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.5/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-div" style="background-image: url('../images/female_carpenter-.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Sarah Johnson</h6>
+                            <p>Profession: Carpenter</p>
+                            <p>Creative carpenter known for innovative designs and flawless execution.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 600 - at most kshs 2200</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.1/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-div" style="background-image: url('../images/mechanic-with-thumb-up-removebg-preview.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Micheal Brown</h6>
+                            <p>Profession: Carpenter</p>
+                            <p>Reliable carpenter offering personalized services tailored to your needs.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 1000 - at most kshs 3000</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 3.8/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                
+
+                
+                <div class="tab-pane fade show" id="electrician" role="tabpanel" aria-labelledby="electrician-tab">
+                    <div class="sub-div" style="background-image: url('../Electricians/electrician.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Ali Mwanzi</h6>
+                            <p>Profession: Electrician</p>
+                            <p>Looking for a trustworthy electrician? I provide top-quality electrical services for residential and commercial clients, with transparent pricing and clear communication.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 1000 - at most kshs 3500</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.3/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-div" style="background-image: url('../Electricians/electrician.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Ghulam Bhaga</h6>
+                            <p>Profession: Electrician</p>
+                            <p>Your electrical problems solved. From installations and repairs to maintenance and troubleshooting, I'm your one-stop shop for all your electrical needs.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 1800 - at most kshs 3200</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.2/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-div" style="background-image: url('../Electricians/electrician.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Patrick Waruru</h6>
+                            <p>Profession: Electrician</p>
+                            <p>Let me brighten your day (and your home)! I offer a wide range of electrical services, from lighting installations to panel upgrades, all at competitive rates.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 900 - at most kshs 2500</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.0/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-div" style="background-image: url('../Electricians/electrician.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Ivy Mucera</h6>
+                            <p>Profession: Electrician</p>
+                            <p>Master Electrician: Safe, Reliable, and Efficient. I ensure your home or business has reliable and up-to-code electrical systems, with a focus on safety and efficiency.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 800 - at most kshs 2800</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 3.9/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-div" style="background-image: url('../Electricians/electrician.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Samwell Bett</h6>
+                            <p>Profession: Electrician</p>
+                            <p>Reliable Electrician offering personalized services tailored to your needs.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 1000 - at most kshs 3000</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 3.8/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+
+                <div class="tab-pane fade show" id="laundry" role="tabpanel" aria-labelledby="laundry-tab">
+                    <div class="sub-div" style="background-image: url('../Laundry/laundry_beauty.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Rashid Abdallah</h6>
+                            <p>Profession: Laundry</p>
+                            <p>Don't let laundry pile up! I offer professional laundry services, including washing, drying, folding, and ironing. Free pick-up and delivery available.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 500 - at most kshs 200</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.3/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-div" style="background-image: url('../Laundry/laundry_beauty.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Grace Debra</h6>
+                            <p>Profession: Laundry</p>
+                            <p>Freshen up your wardrobe. I provide high-quality laundry services with care, ensuring your clothes look and feel their best.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 700 - at most kshs 1900</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.2/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-div" style="background-image: url('../Laundry/laundry_beauty.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Zeinab Memusa</h6>
+                            <p>Profession: Laundry</p>
+                            <p>Say goodbye to laundry day. I'm your convenient and affordable solution for all your laundry needs, from delicates to bulky items.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 900 - at most kshs 200</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.0/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-div" style="background-image: url('../Laundry/laundry_beauty.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Yusin Adan Ali</h6>
+                            <p>Profession: Laundry</p>
+                            <p>Eco-friendly laundry solutions. I use eco-friendly detergents and practices to ensure your laundry is clean and the environment is protected.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 800 - at most kshs 2200</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 3.9/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+
+                
+                <div class="tab-pane fade show" id="movers" role="tabpanel" aria-labelledby="movers-tab">
+                    <div class="sub-div" style="background-image: url('../Movers/mover_avatar.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Mwangi Bhajia</h6>
+                            <p>Profession: Mover</p>
+                            <p>Stress-free moving, guaranteed. We take the hassle out of moving, providing professional, efficient, and reliable service.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 1000 - at most kshs 3500</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.3/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-div" style="background-image: url('../Movers/mover_avatar.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Isaan Kariithi</h6>
+                            <p>Profession: Mover</p>
+                            <p>Moving made easy. From packing and loading to transport and unloading, we handle everything with care and expertise.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 1800 - at most kshs 3200</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.2/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-div" style="background-image: url('../Movers/mover_avatar.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Kevin Irungu</h6>
+                            <p>Profession: Mover</p>
+                            <p>Your trusted moving partner. We're experienced and insured movers who prioritize your satisfaction and ensure your belongings arrive safely.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 900 - at most kshs 2500</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.2/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-div" style="background-image: url('../Movers/mover_avatar.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Nelson Mungai</h6>
+                            <p>Profession: Mover</p>
+                            <p>Unpacking the excitement of your new beginning. Let us help you unpack and settle into your new space so you can start enjoying your new home right away.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 800 - at most kshs 2800</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.0/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+
+
+                <div class="tab-pane fade show" id="plumbers" role="tabpanel" aria-labelledby="plumbers-tab">
+                    <div class="sub-div" style="background-image: url('../Plumbers/illustration-wrench.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Yunus Abdi</h6>
+                            <p>Profession: Plumber</p>
+                            <p>Leaking faucet? Clogged drain? No problem! I'm your friendly neighborhood plumber, ready to tackle any residential or commercial plumbing issue, big or small.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 1000 - at most kshs 3500</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.3/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-div" style="background-image: url('../Plumbers/illustration-wrench.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Eric kazungu</h6>
+                            <p>Profession: Plumber</p>
+                            <p>Your electrical problems solved. From installations and repairs to maintenance and troubleshooting, I'm your one-stop shop for all your electrical needs.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 1800 - at most kshs 3200</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.2/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-div" style="background-image: url('../Plumbers/illustration-wrench.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Harry Wilson</h6>
+                            <p>Profession: Plumber</p>
+                            <p>Don't let plumbing problems disrupt your day. I'm a licensed and insured plumber with years of experience, providing honest and transparent service.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 900 - at most kshs 2500</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 4.0/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-div" style="background-image: url('../Plumbers/illustration-wrench.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Esmail Obo</h6>
+                            <p>Profession: Plumber</p>
+                            <p>We keep the water flowing, so you don't have to stress. From leaky pipes to drain cleaning, we handle all your plumbing needs efficiently and professionally.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 800 - at most kshs 2800</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 3.9/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-div" style="background-image: url('../Plumbers/illustration-wrench.png'); background-size: contain; background-repeat: no-repeat; background-position: top left;">
+                        <div class="info">
+                            <h6 class="sub-div-headings">Name: Ali Hassan</h6>
+                            <p>Profession: Plumber</p>
+                            <p>Your one-stop shop for all things plumbing. We specialize in repairs, replacements, installations, and maintenance for kitchens, bathrooms, and everything in between.</p>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="price_range"><b>Price Charging:</b> kshs 1000 - at most kshs 3000</span>
+                                <span class="Ratings"><span class="rate_border">RATE:</span> 3.8/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+           
+        </div>
+    </div>
+</div>
+
+
+	
+
+
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    </html>
+
+  
